@@ -31,8 +31,6 @@ public setYCoord(int y) {
   }
 }
 
-
-
 public int getXCoord(){
   return xcoord;
 }
