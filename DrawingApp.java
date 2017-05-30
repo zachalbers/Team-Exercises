@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
-/** 
+/**
  * Application for drawing circles on the screen.  When the user click, a circle
  * will be created on the spot of default size.  When dragging the mouse, the circle
  * will have the size indicated by the drag area.
@@ -16,27 +16,30 @@ public class DrawingApp extends JFrame implements MouseListener {
 	public static final int WINDOW_WIDTH = 1000;
 	public static final int WINDOW_HEIGHT = 1000;
 	public static final int DEFAULT_CIRCLE_SIZE = 100;
-	
+	public static final int DEFAULT_SQUARE_SIZE = 140;
+
 	private ArrayList<Circle> circles = new ArrayList<Circle>();
-	
+	private ArrayList<Square> squares = new ArrayList<Square>();
+
 	// Need to know where mouse drag started when the user releases the mouse button
 	private Point mouseDragStartPoint;
-   
-    /** 
+
+    /**
      * Creates the window that users can use to draw circles.
      */
     public DrawingApp() {
         setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        
+
         // put one circle in the list to get is started.
         circles.add(new Circle(new Point(100,100),new Point(200,200)));
-        
+				squares.add(new Square(new Point(50,50), new Point(100,100)));
+
         // Make sure we listen to mouse events.
         getContentPane().addMouseListener(this);
-       
+
     }
-    
+
     /**
      * Draws what should be displayed in this window.  this will be called each
      * time the window needs to be refreshed.  This includes when the window
@@ -54,9 +57,12 @@ public class DrawingApp extends JFrame implements MouseListener {
         for (Circle c : circles) {
         	c.draw(canvas);
         }
-        
+				for (Square s : squares) {
+					s.draw(canvas);
+				}
+
     }
-    
+
     // --- All the methods we must implement if we want to be a Mouse Listener -----
 	@Override
 	public void mouseClicked(MouseEvent e) {
@@ -64,11 +70,16 @@ public class DrawingApp extends JFrame implements MouseListener {
 			for (Circle c : circles) {
 				c.moveDown(50);
 			}
+			for (Square s : squares) {
+				s.moveDown(50);
+			}
 		} else {
 			int xCoord = e.getX();
 			int yCoord = e.getY();
-			circles.add(new Circle(new Point(xCoord,yCoord), 
+			circles.add(new Circle(new Point(xCoord,yCoord),
 					new Point(xCoord + DEFAULT_CIRCLE_SIZE, yCoord + DEFAULT_CIRCLE_SIZE)));
+			squares.add(new Square(new Point(xCoord,yCoord),
+					new Point(xCoord + DEFAULT_SQUARE_SIZE, yCoord + DEFAULT_SQUARE_SIZE)));
 			repaint();
 		}
 	}
@@ -84,24 +95,25 @@ public class DrawingApp extends JFrame implements MouseListener {
 			System.out.println("nothing here");
 			return;
 		}
-		
+
 		Point bottomRight = new Point(e.getX(), e.getY());
 
 		circles.add(new Circle(mouseDragStartPoint,bottomRight));
+		squares.add(new Square(mouseDragStartPoint, bottomRight));
 		mouseDragStartPoint = null;
-		repaint();	
+		repaint();
 	}
-	
+
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// Do nothing for this event.
-		
+
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// Do nothing for this event.
-		
+
 	}
 
     public static void main(String[] args) {

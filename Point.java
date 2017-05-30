@@ -19,13 +19,13 @@ public int distance(Point point1) {
   return (int)sqrt;
 }
 
-public setXCoord(int x) {
+public void setXCoord(int x) {
   if (x > 0) {
     xcoord = x;
   }
 }
 
-public setYCoord(int y) {
+public void setYCoord(int y) {
   if (y > 0) {
     ycoord = y;
   }
@@ -41,11 +41,11 @@ public int getYCoord(){
 
 
 public void moveUp(int amount) {
-  ycoord += amount;
+  ycoord -= amount;
 }
 
 public void moveDown(int amount) {
-  ycoord -= amount;
+  ycoord += amount;
 }
 
 public void moveLeft(int amount) {
