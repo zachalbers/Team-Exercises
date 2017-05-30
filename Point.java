@@ -11,15 +11,26 @@ public class Point {
   }
 
 
-public int distance(Point point1, Point point2) {
-  double xdiff = Math.pow( (point1.getXCoord() - point2.getXCoord()), 2 );
-  double ydiff = Math.pow( (point1.getYCoord() - point2.getYCoord()), 2 );
+public int distance(Point point1) {
+  double xdiff = Math.pow( (point1.getXCoord() - xcoord), 2 );
+  double ydiff = Math.pow( (point1.getYCoord() - ycoord), 2 );
   double sqrt = Math.sqrt( (xdiff + ydiff));
 
-  int small = (int)sqrt;
-
-  return small;
+  return (int)sqrt;
 }
+
+public setXCoord(int x) {
+  if (x > 0) {
+    xcoord = x;
+  }
+}
+
+public setYCoord(int y) {
+  if (y > 0) {
+    ycoord = y;
+  }
+}
+
 
 
 public int getXCoord(){
