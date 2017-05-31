@@ -2,8 +2,8 @@ import java.util.*;
 
 public class Point {
 
-  int xcoord;
-  int ycoord;
+  private int xcoord;
+  private int ycoord;
 
   public Point(int x, int y) {
     xcoord = x;

@@ -4,7 +4,6 @@ import java.awt.Rectangle;
 public class Square{
 
   private Point topLeft;
-  private Point bottomRight;
   private int width;
 
   public Square(Point topLeft , Point bottomRight){
@@ -17,7 +16,7 @@ public class Square{
   //   this.topLeft = topLeft;
   // width = bottomRight.getXCoord() - topLeft.getXCoord();
   // }
-  
+
   public void moveDown(int amount){
     topLeft.moveDown(amount);
   }
