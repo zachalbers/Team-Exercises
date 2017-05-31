@@ -6,25 +6,22 @@ public class Circle {
 	private int radius;
 
 	public Circle(Point topLeft, Point bottomRight){
-		radius = (int)topLeft.distance(bottomRight)/2;
-		centre = new Point(topLeft.getXCoord() + radius, topLeft.getYCoord() + radius);
+			radius = (int)topLeft.distance(bottomRight)/2;
+			centre = new Point(topLeft.getXCoord() + radius, topLeft.getYCoord() + radius);
 	}
 
 	public Circle(Point centre, int radius) {
-		this.centre = centre;
-		this.radius = radius;
+			this.centre = centre;
+			this.radius = radius;
 	}
 
 	public void moveDown(int amount) {
-		centre.moveDown(amount);
+			centre.moveDown(amount);
 	}
 
 	public void draw(Graphics g){
-		g.drawOval(centre.getXCoord() - radius, centre.getYCoord() - radius,
-				radius * 2,
-				radius * 2);
-
-
-
+			g.drawOval(centre.getXCoord() - radius, centre.getYCoord() - radius,
+			radius * 2,
+			radius * 2);
 	}
 }

@@ -16,7 +16,7 @@ public class DrawingApp extends JFrame implements MouseListener {
 	public static final int WINDOW_WIDTH = 1000;
 	public static final int WINDOW_HEIGHT = 1000;
 	public static final int DEFAULT_CIRCLE_SIZE = 100;
-	public static final int DEFAULT_SQUARE_SIZE = 140;
+	public static final int DEFAULT_SQUARE_SIZE = 100;
 
 	private ArrayList<Circle> circles = new ArrayList<Circle>();
 	private ArrayList<Square> squares = new ArrayList<Square>();
