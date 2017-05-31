@@ -11,6 +11,12 @@ public class Square{
       width = (int)topLeft.distance(bottomRight);
   }
 
+  public Square(Point topLeft, int width) {
+			this.topLeft = topLeft;
+			this.width = width;
+	}
+
+
   public void moveDown(int amount){
       topLeft.moveDown(amount);
   }

@@ -6,8 +6,8 @@ public class Point {
     private int ycoord;
 
     public Point(int x, int y) {
-        xcoord = x;
-        ycoord = y;
+        xcoord = setXCoord(x);
+        ycoord = setYCoord(y);
     }
 
 
