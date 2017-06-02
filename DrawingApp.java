@@ -73,9 +73,10 @@ public class DrawingApp extends JFrame implements MouseListener {
 		} else {
 			int xCoord = e.getX();
 			int yCoord = e.getY();
-			circles.add(new Circle(new Point(xCoord,yCoord),
+			Point topLeft = new Point(xCoord, yCoord);
+			circles.add(new Circle(topLeft,
 					new Point(xCoord + DEFAULT_CIRCLE_SIZE, yCoord + DEFAULT_CIRCLE_SIZE)));
-			squares.add(new Square(new Point(xCoord,yCoord),
+			squares.add(new Square(topLeft,
 					new Point(xCoord + DEFAULT_SQUARE_SIZE, yCoord + DEFAULT_SQUARE_SIZE)));
 			repaint();
 		}
