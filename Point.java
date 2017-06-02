@@ -6,8 +6,8 @@ public class Point {
     private int ycoord;
 
     public Point(int x, int y) {
-        xcoord = setXCoord(x);
-        ycoord = setYCoord(y);
+        this.xcoord = x;
+        this.ycoord = y;
     }
 
 
@@ -18,21 +18,15 @@ public class Point {
         return (int)sqrt;
     }
 
-    public int setXCoord(int x) {
-        if (x > 0) {
-            return x;
-        } else {
-            return 0;
+    public void setXCoord(int xcoord) {
+        this.xcoord = xcoord;
         }
-    }
 
-    public int setYCoord(int y) {
-        if (y > 0) {
-            return y;
-        } else {
-            return 0;
+
+    public void setYCoord(int ycoord) {
+        this.ycoord = ycoord;
         }
-    }
+
 
     public int getXCoord(){
         return xcoord;
@@ -45,19 +39,19 @@ public class Point {
 
     public void moveUp(int amount) {
 
-        ycoord -= setYCoord(amount);
+        this.ycoord -= amount;
     }
 
     public void moveDown(int amount) {
-        ycoord += setYCoord(amount);
+        this.ycoord += amount;
     }
 
     public void moveLeft(int amount) {
-        xcoord -= setXCoord(amount);
+        this.xcoord -= amount;
     }
 
     public void moveRight(int amount) {
-        xcoord += setXCoord(amount);
+        this.xcoord += amount;
     }
 
 
