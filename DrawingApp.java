@@ -33,7 +33,7 @@ public class DrawingApp extends JFrame implements MouseListener {
 
         // put one circle in the list to get is started.
         circles.add(new Circle(new Point(100,100),new Point(200,200)));
-				squares.add(new Square(new Point(50,50), new Point(100,100)));
+				squares.add(new Square(new Point(100,100), new Point(200,200)));
 
         // Make sure we listen to mouse events.
         getContentPane().addMouseListener(this);
@@ -69,9 +69,6 @@ public class DrawingApp extends JFrame implements MouseListener {
 		if (e.getButton() == e.BUTTON3) {
 			for (Circle c : circles) {
 				c.moveDown(50);
-			}
-			for (Square s : squares) {
-				s.moveDown(50);
 			}
 		} else {
 			int xCoord = e.getX();
