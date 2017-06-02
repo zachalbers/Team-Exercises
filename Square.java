@@ -1,8 +1,7 @@
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-//
-
+// This class creates a 'Square' object and draws it on the window.
 public class Square{
 
   private Point topLeft;

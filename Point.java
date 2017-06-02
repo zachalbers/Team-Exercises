@@ -1,5 +1,6 @@
 import java.util.*;
 
+// This class is used to create objects with xcoord and ycoord properties.
 public class Point {
 
     private int xcoord;
@@ -10,7 +11,7 @@ public class Point {
         this.ycoord = y;
     }
 
-
+    // Returns the distance between two points.
     public int distance(Point point1) {
         double xdiff = Math.pow( (point1.getXCoord() - xcoord), 2 );
         double ydiff = Math.pow( (point1.getYCoord() - ycoord), 2 );
@@ -20,12 +21,11 @@ public class Point {
 
     public void setXCoord(int xcoord) {
         this.xcoord = xcoord;
-        }
-
+    }
 
     public void setYCoord(int ycoord) {
         this.ycoord = ycoord;
-        }
+    }
 
 
     public int getXCoord(){
@@ -38,7 +38,6 @@ public class Point {
 
 
     public void moveUp(int amount) {
-
         this.ycoord -= amount;
     }
 
