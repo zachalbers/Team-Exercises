@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Bank{
     /** The list of bank accounts contained by this bank.*/
     private ArrayList<BankAccount> accounts;
-    
+
     /**
      * Creates a new Bank that contains four accounts, each with a default
      * starting balance of $0.
@@ -18,7 +18,7 @@ public class Bank{
         accounts.add(new BankAccount(0.0));
         accounts.add(new BankAccount(0.0));
     }
-    
+
     /**
      * Adds the specified account to this Bank.  Note that the actual
      * reference provided is used, which can be a potential privacy leak.
@@ -40,20 +40,25 @@ public class Bank{
     public void addAccount(BankAccount account) {
         accounts.add(account);
     }
-    
+
     /**
      * Transfer funds between the accounts specified by the account numbers.
-     * If accounts with the specified account numbers don't exist, this method 
+     * If accounts with the specified account numbers don't exist, this method
      * does not do anything.
      * <p>
      * This method uses the transfer method in BankAccount and passes a reference to
-     * the actual instance stored in this Bank object of the account to transfer the 
-     * money to. 
+     * the actual instance stored in this Bank object of the account to transfer the
+     * money to.
      * <p>
      * @param fromAccountNum the account number of the account to take the funds from.
      * @param toAccountNum the account number of the account to deposit the funds into.
      * @param amount the amount to transfer between the two accounts.
      */
+
+     // The leak is acceptable because the changes in the account balance should be universial for that bank account instance.
+     // If a copy was made and then the transfer made, the change wouldn't affect the original instance of the bank account.
+
+
     public void transfer(int fromAccountNum, int toAccountNum, double amount) {
         BankAccount fromAccount = null;
         BankAccount toAccount = null;
