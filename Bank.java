@@ -98,9 +98,11 @@ public class Bank{
     }
 
 
-    public void Collection addAccount(Collection accounts) {
-      for (bank : accounts) {
-          accounts.add(bank);
+    public void addAccount(Collection<BankAccount> accountsToAdd) {
+      for (BankAccount bank : accountsToAdd) {
+
+          BankAccount current = getAccount( bank.getAccountNumber() );
+          this.accounts.add(current);
       }
     }
 

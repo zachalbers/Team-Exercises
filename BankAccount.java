@@ -9,11 +9,16 @@ public class BankAccount {
     private int accountNumber = 1;
     public static int count = 0;
 
-    // 
+
+    // Static, because every object of the class will share this variable.
     public static double interestRate = 0.01;
 
+
 	public BankAccount() {
+      count += 1;
+      accountNumber = count;
 	}
+
 
 	public BankAccount(double startBalance) {
     count += 1;
@@ -21,10 +26,10 @@ public class BankAccount {
 		balance = startBalance;
 	}
 
-	public BankAccount(BankAccount accountToCopy) {
-		balance = accountToCopy.balance;
-		accountNumber = accountToCopy.accountNumber;
-	}
+	 public BankAccount(BankAccount accountToCopy) {
+  		balance = accountToCopy.balance;
+  		accountNumber = accountToCopy.accountNumber;
+	  }
     /**
      * This accessor methods returns the current balance in this account.
      * @return the current balance of the account.
