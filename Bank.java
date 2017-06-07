@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * Class that represents a Bank entity that contains a list of BankAccounts
@@ -95,4 +96,19 @@ public class Bank{
         }
         return account;
     }
+
+
+    public void Collection addAccount(Collection accounts) {
+      for (bank : accounts) {
+          accounts.add(bank);
+      }
+    }
+
+
+
+
+
+
+
+
 }
