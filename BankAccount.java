@@ -9,6 +9,9 @@ public class BankAccount {
     private int accountNumber = 1;
     public static int count = 0;
 
+    // 
+    public static double interestRate = 0.01;
+
 	public BankAccount() {
 	}
 
