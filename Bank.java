@@ -80,6 +80,12 @@ public class Bank{
      * @param accountNumber the account number of the account to retrieve.
      * @return the bank account that has the specified account number.
      */
+
+
+     // It is necessary for this method to have no privacy leaks, and to return a copy of the bank
+     // account. If only a reference was passed, then other classes/methods would have the ablilty
+     // to change that account.
+
     public BankAccount getAccount(int accountNumber) {
         BankAccount account = null;
         for (BankAccount current : accounts) {
