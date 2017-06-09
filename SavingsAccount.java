@@ -3,7 +3,9 @@
 public class SavingsAccount extends BankAccount {
 
 
-double miniumBalance;
+double miniumBalance = 50;
+
+
 
 
 public void withdraw(double amount) {
@@ -15,10 +17,6 @@ public void withdraw(double amount) {
         }
 
 }
-
-
-
-
 
 
 
