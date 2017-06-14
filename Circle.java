@@ -5,8 +5,6 @@ public class Circle extends Shape {
 
 
 
-
-
 	public Circle(Point topLeft, int diameter) {
 			super(topLeft, diameter);
 	}
@@ -18,7 +16,7 @@ public class Circle extends Shape {
 
 
 	public Circle(Circle toCopy) {
-			this(toCopy.getTopLeft(), toCopy.getSize());
+			super( new Shape(toCopy.getTopLeft(), toCopy.getSize()) );
 	}
 
 	public void draw(Graphics g){
