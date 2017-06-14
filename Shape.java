@@ -5,24 +5,36 @@ public class Shape {
 	private Point topLeft = new Point(100, 100);
 	private int size = 50;
 
-	public void setSize(int size){
-		this.size = size;
+
+
+
+	public Shape (Point topLeft, int size) {
+			Point topLeftCopy = new Point(topLeft.getXCoord(), topLeft.getYCoord());
+			this.topLeft = topLeftCopy;
+			this.size = size;
 	}
 
+	public Shape (Shape toCopy) {
+			this(toCopy.getTopLeft(), toCopy.getSize());
+	}
+
+
+
+
 	public void moveDown(int amount) {
-		topLeft.moveDown(amount);
+			topLeft.moveDown(amount);
 	}
 
 	public void moveUp(int amount) {
-		topLeft.moveUp(amount);
+			topLeft.moveUp(amount);
 	}
 
 	public void moveLeft(int amount) {
-		topLeft.moveLeft(amount);
+			topLeft.moveLeft(amount);
 	}
 
 	public void moveRight(int amount) {
-		topLeft.moveRight(amount);
+			topLeft.moveRight(amount);
 	}
 
 	public void draw(Graphics g){
@@ -32,12 +44,13 @@ public class Shape {
 
 
   public Point getTopLeft() {
-    Point topLeftCopy = new Point(topLeft.getXCoord(), topLeft.getYCoord());
-    return topLeftCopy;
+    	Point topLeftCopy = new Point(topLeft.getXCoord(), topLeft.getYCoord());
+    	return topLeftCopy;
   }
 
+
   public int getSize() {
-    return size;
+    	return size;
   }
 
 }

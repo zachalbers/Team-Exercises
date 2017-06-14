@@ -93,15 +93,13 @@ public class DrawingApp extends JFrame implements KeyListener {
 		case 'C':
 			size = 75;
 		case 'c':
-			Circle toAdd = new Circle();
-			toAdd.setSize(size);
+			Circle toAdd = new Circle(new Point(100, 100), size);
 			shapes.add(toAdd);
 			break;
 		case 'S':
 			size = 100;
 		case 's':
-			Square square = new Square();
-			square.setSize(size);
+			Square square = new Square(new Point(100, 100), size);
 			shapes.add(square);
 			break;
 		case KeyEvent.VK_LEFT:
