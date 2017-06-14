@@ -1,7 +1,7 @@
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-public class Shape {
+public abstract class Shape {
 	private Point topLeft = new Point(100, 100);
 	private int size = 50;
 
@@ -37,10 +37,7 @@ public class Shape {
 			topLeft.moveRight(amount);
 	}
 
-	public void draw(Graphics g){
-
-
-	}
+	public abstract void draw(Graphics g);
 
 
   public Point getTopLeft() {
@@ -52,5 +49,17 @@ public class Shape {
   public int getSize() {
     	return size;
   }
+
+
+
+
+	public String toString() {
+		String info;
+		info = Integer.toString(getTopLeft().getXCoord()) + " " + Integer.toString(getTopLeft().getYCoord())
+						+" "+ Integer.toString(getSize());
+
+		return info;
+
+	}
 
 }

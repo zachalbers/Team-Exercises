@@ -56,6 +56,7 @@ public class DrawingApp extends JFrame implements KeyListener {
 
     public void timerAction(){
 		for (Shape s : shapes) {
+			// This is a polymorphic method call.
 			s.moveDown(10);
 		}
 
@@ -77,6 +78,7 @@ public class DrawingApp extends JFrame implements KeyListener {
         // start drawing.
         super.paint(canvas);
         for (Shape s : shapes) {
+					// This is a polymorphic method call.
         	s.draw(canvas);
         }
 
@@ -95,6 +97,7 @@ public class DrawingApp extends JFrame implements KeyListener {
 		case 'c':
 			Circle toAdd = new Circle(new Point(100, 100), size);
 			shapes.add(toAdd);
+
 			break;
 		case 'S':
 			size = 100;
@@ -105,24 +108,28 @@ public class DrawingApp extends JFrame implements KeyListener {
 		case KeyEvent.VK_LEFT:
 		case KeyEvent.VK_KP_LEFT:
 		for (Shape s : shapes) {
+			// This is a polymorphic method call.
 				s.moveLeft(10);
 			}
 
 			break;
 		case KeyEvent.VK_RIGHT:
 		for (Shape s : shapes) {
+			// This is a polymorphic method call.
 				s.moveRight(10);
 			}
 
 			break;
 		case KeyEvent.VK_UP:
 		for (Shape s : shapes) {
+			// This is a polymorphic method call.
 				s.moveUp(10);
 			}
 
 			break;
 		case KeyEvent.VK_DOWN:
 		for (Shape s : shapes) {
+			// This is a polymorphic method call.
 				s.moveDown(10);
 			}
 			break;

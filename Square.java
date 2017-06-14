@@ -11,7 +11,7 @@ public class Square extends Shape {
 	}
 
 	public Square(Square toCopy) {
-			super( new Shape(toCopy.getTopLeft(), toCopy.getSize()) );
+			super(toCopy);
 	}
 
 
@@ -20,5 +20,12 @@ public class Square extends Shape {
 				getSize(),
 				getSize() );
 
+	}
+
+
+
+	public String toString() {
+		String info = "square " + super.toString();
+		return info;
 	}
 }

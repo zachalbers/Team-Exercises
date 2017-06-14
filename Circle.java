@@ -16,7 +16,7 @@ public class Circle extends Shape {
 
 
 	public Circle(Circle toCopy) {
-			super( new Shape(toCopy.getTopLeft(), toCopy.getSize()) );
+			super(toCopy);
 	}
 
 	public void draw(Graphics g){
@@ -24,5 +24,13 @@ public class Circle extends Shape {
 			getSize() * 2,
 			getSize() * 2 );
 
+	}
+
+
+
+
+	public String toString() {
+		String info = "circle " + super.toString();
+		return info;
 	}
 }
